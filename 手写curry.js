@@ -9,6 +9,7 @@ function $curry(fn) {
     }
   }
 }
+vv
 
 function sum(a, b, c) {
   return a + b + c;

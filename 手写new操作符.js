@@ -1,4 +1,5 @@
 function $new(constructor) {
+  if (typeof constructor !== 'function') throw new Error('TypeError')
   const slice = Array.prototype.slice
   const args = slice.call(arguments, 1)
   // 创建一个空对象
