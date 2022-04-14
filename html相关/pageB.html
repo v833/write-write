@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pageB</title>
+</head>
+
+<body>
+  pageB
+  <button id="btn">click</button>
+  <p id="p"></p>
+  <script>
+    // window.addEventListener('storage', function (e) {
+    //   console.log('e: ', e);
+    //   p.textContent = e.newValue
+    // })
+    const channel = new BroadcastChannel('channel')
+    channel.addEventListener('message', function (e) {
+      console.log('e: ', e);
+      p.textContent = e.data
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>window</title>
+</head>
+
+<body>
+  <iframe id="iframe" src="./iframe.html"></iframe>
+  <button id="btn">click</button>
+  <button id="btn2">close</button>
+  <button id="sonBtn">son</button>
+  <textarea id="textarea" rows="5" cols="30"></textarea>
+  <p id="test"></p>
+  <script>
+    window.name = 'index'
+    console.dir(window)
+    console.log(window === window.window.window) // 方便使用this
+    console.log(this === window);
+
+    console.log(window.isSecureContext)
+    console.log(window.screenX);
+    console.log(window.screenY);
+
+    console.log(iframe);
+
+    let son = null
+    btn.onclick = () => {
+      son = window.open('./iframe.html')
+    }
+    btn2.onclick = () => {
+      console.log('window.opener: ', window.opener);
+    }
+    sonBtn.onclick = () => {
+      son.alert(2)
+    }
+    setInterval(() => {
+      test.textContent = window.getSelection().toString()
+    }, 1000)
+  </script>
+</body>
+
+</html>

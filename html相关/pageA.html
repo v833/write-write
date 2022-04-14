@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pageA</title>
+</head>
+
+<body>
+  pageA
+  <iframe src="./pageB.html"></iframe>
+  <button id="btn">click</button>
+  <p id="p"></p>
+  <script>
+    const channel = new BroadcastChannel('channel')
+
+    btn.onclick = () => {
+      localStorage.setItem('test', JSON.stringify({
+        date: Date.now(),
+        message: 'from pageA'
+      }))
+      channel.postMessage('from pageA')
+    }
+
+  </script>
+</body>
+
+</html>
