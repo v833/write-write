@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const url = new URL(location.href)
+    console.log('url: ', url);
+    sessionStorage.setItem('test', '1')
+    navigator.storage.estimate().then((estimate) => {
+      console.log('使用：' + estimate.usage);
+      console.log('总量：' + estimate.quota);
+    })
+  </script>
+</body>
+
+</html>
